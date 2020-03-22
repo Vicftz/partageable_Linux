@@ -6,7 +6,7 @@
 	g++ -fPIC ${CPPFLAGS} -c $< -o $@
 
 ${EXE} : ${OBJS}
-	g++ ${OBJS} ${LDFLAGS} -o $@
+	g++ ${OBJS} ${LDFLAGS} -o $@ -ldl -Wall
 
 ${LIBSO} : ${LIBSO_OBJS}
 	gcc -o $@ -shared ${LDFLAGS} $^
